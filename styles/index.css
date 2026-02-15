@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Press+Start+2P&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-body-color font-sans antialiased;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    @apply bg-cyan/30 text-white;
+  }
+}
+
+@layer components {
+  /* Section pattern from reference */
+  .section-label {
+    @apply uppercase text-cyan font-semibold;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    @apply font-extrabold text-text-main;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    @apply text-body-color;
+    max-width: 600px;
+    font-size: 1.05rem;
+    margin-bottom: 3rem;
+  }
+
+  /* Cards */
+  .glass-card {
+    @apply bg-surface border rounded-xl;
+    border-color: rgba(0, 240, 255, 0.08);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+
+  .glass-card-hover:hover {
+    border-color: rgba(0, 240, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  }
+
+  /* Team/agent cards with magenta glow */
+  .team-card {
+    @apply bg-surface rounded-xl transition-all duration-300 relative overflow-hidden;
+    border: 1px solid rgba(255, 0, 170, 0.08);
+    padding: 2rem;
+  }
+
+  .team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00f0ff, #ff00aa);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .team-card:hover {
+    border-color: rgba(255, 0, 170, 0.4);
+    box-shadow: 0 0 20px rgba(255, 0, 170, 0.3);
+    transform: translateY(-3px);
+  }
+
+  .team-card:hover::before {
+    opacity: 1;
+  }
+
+  .neon-border-cyan {
+    @apply border border-cyan/30 shadow-neon-cyan;
+  }
+
+  .neon-border-magenta {
+    @apply border border-magenta/30 shadow-neon-magenta;
+  }
+
+  .neon-text-cyan {
+    @apply text-cyan;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  }
+
+  .neon-text-magenta {
+    @apply text-magenta;
+    text-shadow: 0 0 10px rgba(255, 0, 170, 0.5);
+  }
+
+  /* Primary button - gradient */
+  .btn-primary {
+    display: inline-block;
+    padding: 0.85rem 2.2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #00f0ff, #ff00aa);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+    color: #000;
+  }
+
+  /* Nav CTA gradient */
+  .nav-cta {
+    background: linear-gradient(135deg, #00f0ff, #ff00aa);
+    color: #000;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: opacity 0.2s;
+  }
+
+  .nav-cta:hover {
+    color: #000;
+    opacity: 0.9;
+  }
+
+  /* Why items - dot style */
+  .why-item {
+    @apply flex items-start gap-4 rounded-lg transition-colors duration-300;
+    padding: 1.2rem;
+  }
+
+  .why-item:hover {
+    background: rgba(0, 240, 255, 0.03);
+  }
+
+  .why-dot {
+    @apply shrink-0 rounded-full bg-cyan;
+    width: 8px;
+    height: 8px;
+    margin-top: 0.5rem;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+  }
+
+  .scanline-overlay {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+    z-index: 10;
+  }
+
+  input#togglePlan:checked ~ .dot {
+    @apply translate-x-full;
+  }
+
+  /* Alternating section bg */
+  .section-alt {
+    background: #0e0e1a;
+  }
+}
+
+@layer utilities {
+  .text-gradient-neon {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan to-magenta;
+  }
+}
