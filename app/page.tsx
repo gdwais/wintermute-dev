@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { PixelAgentAtDesk } from "@/components/PixelAgent";
-import PixelAgent from "@/components/PixelAgent";
 import {
   PixelSearchIcon,
   PixelDocIcon,
@@ -9,34 +7,53 @@ import {
   PixelDiscoveryIcon,
   PixelDeployIcon,
   PixelManageIcon,
+  PixelSetupIcon,
 } from "@/components/PixelIcons";
 
-const featuredAgents = [
-  { type: "executive" as const, name: "Executive", role: "Orchestrates the team. Routes tasks, makes decisions." },
-  { type: "researcher" as const, name: "Researcher", role: "Deep market analysis, competitive intel, trends." },
-  { type: "content-creator" as const, name: "Content Creator", role: "Blog posts, articles, emails, whitepapers." },
-  { type: "developer" as const, name: "Developer", role: "Code generation, debugging, architecture." },
+const capabilities = [
+  { icon: <PixelTaskIcon size={40} color="#00f0ff" />, title: "Scheduled Agents", desc: "Cron jobs that think. Daily reports, outreach, monitoring — running autonomously." },
+  { icon: <PixelDocIcon size={40} color="#9b59ff" />, title: "Data Pipelines", desc: "Ingest, normalize, enrich. Legacy exports into modern schemas." },
+  { icon: <PixelSearchIcon size={40} color="#ff00aa" />, title: "Control Planes", desc: "Telegram and Slack bots as operator interfaces for your automation." },
+  { icon: <PixelBrainIcon size={40} color="#9b59ff" />, title: "Multi-Agent Systems", desc: "Specialized agents coordinating across content, intel, operations." },
+  { icon: <PixelSetupIcon size={40} color="#00f0ff" />, title: "MCP Integrations", desc: "Connect Notion, Google Workspace, APIs, databases. Tool use, not toy demos." },
 ];
 
-const painPoints = [
-  { icon: <PixelSearchIcon size={40} color="#00f0ff" />, text: "Researching competitors takes hours" },
-  { icon: <PixelDocIcon size={40} color="#9b59ff" />, text: "Content creation is a bottleneck" },
-  { icon: <PixelBrainIcon size={40} color="#ff00aa" />, text: "Context switching kills deep work" },
-  { icon: <PixelTaskIcon size={40} color="#39ff14" />, text: "Operational tasks pile up" },
+const projects = [
+  {
+    title: "Federal BD Outreach Engine",
+    desc: "Automated daily outreach generation from USASpending contract data. AI email generation with personalized hooks, queued to Google Docs for human review.",
+    stack: ["OpenClaw", "TypeScript", "USASpending API", "Google Docs API", "Telegram", "Cron"],
+  },
+  {
+    title: "Multi-Agent Content & Intel System",
+    desc: "Five-agent deployment for a fintech firm. Content creation, competitive intelligence, PR outreach, executive briefings. 22 scheduled cron jobs.",
+    stack: ["OpenClaw", "Multi-Agent", "Notion", "Telegram", "Cron (22 jobs)", "MCP"],
+  },
+  {
+    title: "Trading Operations Automation",
+    desc: "OpenClaw on Mac Studio for a trading desk. Automated database checks, trade validation, Bloomberg data bridge. Daily reports before market open.",
+    stack: ["OpenClaw", "Mac Studio", "PostgreSQL", "Bloomberg API", "Cron", "Telegram"],
+  },
 ];
 
-const pricingPreview = [
-  { tier: "Starter", price: "$500", period: "/mo", agents: "Up to 3 agents", highlight: false },
-  { tier: "Growth", price: "$1,500", period: "/mo", agents: "Up to 6 agents", highlight: true },
-  { tier: "Enterprise", price: "Custom", period: "", agents: "Unlimited agents", highlight: false },
+const steps = [
+  { num: "01", title: "Discovery", desc: "We learn your workflows, data sources, and pain points.", icon: <PixelDiscoveryIcon size={48} color="#00f0ff" /> },
+  { num: "02", title: "Build", desc: "Custom automation, tested against real data.", icon: <PixelDeployIcon size={48} color="#ff00aa" /> },
+  { num: "03", title: "Deploy", desc: "OpenClaw instance, cron schedules, control plane, docs.", icon: <PixelSetupIcon size={48} color="#39ff14" /> },
+  { num: "04", title: "Iterate", desc: "Monitor, tune, expand. Your system gets better over time.", icon: <PixelManageIcon size={48} color="#9b59ff" /> },
+];
+
+const pricing = [
+  { tier: "Setup", price: "$1,000", detail: "flat", desc: "OpenClaw instance, Telegram bot, basic agent, handoff docs" },
+  { tier: "Custom Builds", price: "$150/hr", detail: "or fixed-fee", desc: "Data pipelines, scheduled agents, integrations" },
+  { tier: "Retainer", price: "$500–1,500", detail: "/mo", desc: "Monitoring, tuning, new agents, priority support" },
 ];
 
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="relative overflow-hidden" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "8rem 2rem 4rem" }}>
-        {/* Background glow effects */}
         <div className="absolute top-[-100px] right-[-100px] w-[600px] h-[600px] pointer-events-none" style={{ background: "radial-gradient(circle, rgba(0,240,255,.08), transparent 70%)" }} />
         <div className="absolute bottom-[-100px] left-[-100px] w-[500px] h-[500px] pointer-events-none" style={{ background: "radial-gradient(circle, rgba(255,0,170,.06), transparent 70%)" }} />
 
@@ -44,132 +61,102 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="flex-1 text-center lg:text-left">
               <h1 className="text-text-main leading-[1.1] mb-6" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 800, letterSpacing: "-0.03em" }}>
-                Deploy an{" "}
-                <span className="text-gradient-neon">AI Agent Team</span>
-                <br />for Your Business
+                Automate the work{" "}
+                <span className="text-gradient-neon">you shouldn&apos;t be doing.</span>
               </h1>
               <p className="text-body-color leading-relaxed mb-10 max-w-[640px] mx-auto lg:mx-0" style={{ fontSize: "clamp(1.1rem, 2vw, 1.35rem)" }}>
-                WintermuteDev builds and manages teams of AI agents that handle
-                research, content, development, and operations — so your team
-                can focus on building.
+                We build AI-powered automation systems — data pipelines, scheduled agents, workflow integrations — so you can focus on your actual business.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                <Link
-                  href="/contact"
-                  className="btn-primary"
-                >
-                  Get Started
-                </Link>
-                <Link
-                  href="/agents"
-                  className="px-8 py-3 text-sm font-semibold text-cyan border border-cyan/30 rounded-lg hover:bg-cyan-glow transition-colors"
-                >
-                  See Our Agents
+                <Link href="/contact" className="btn-primary">Talk to Us</Link>
+                <Link href="/work" className="px-8 py-3 text-sm font-semibold text-cyan border border-cyan/30 rounded-lg hover:bg-cyan-glow transition-colors">
+                  See Our Work
                 </Link>
               </div>
             </div>
 
-            {/* Pixel Office Scene */}
-            <div className="flex-1 flex justify-center">
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 max-w-sm">
-                {(["executive", "researcher", "developer", "content-creator", "brand-manager", "qa-engineer"] as const).map(
-                  (type) => (
-                    <div key={type} className="flex justify-center animate-float" style={{ animationDelay: `${Math.random() * 2}s` }}>
-                      <PixelAgentAtDesk type={type} size={80} />
-                    </div>
-                  )
-                )}
+            {/* Terminal block */}
+            <div className="flex-1 flex justify-center w-full max-w-md">
+              <div className="glass-card w-full p-6 font-mono text-sm" style={{ background: "rgba(10,10,18,.9)" }}>
+                <div className="flex items-center gap-2 mb-4 pb-3" style={{ borderBottom: "1px solid rgba(0,240,255,.15)" }}>
+                  <span className="w-3 h-3 rounded-full" style={{ background: "#ff5f57" }} />
+                  <span className="w-3 h-3 rounded-full" style={{ background: "#febc2e" }} />
+                  <span className="w-3 h-3 rounded-full" style={{ background: "#28c840" }} />
+                  <span className="text-body-color text-xs ml-2">terminal</span>
+                </div>
+                <div className="space-y-1 text-body-color">
+                  <p><span className="text-cyan">$</span> openclaw cron list</p>
+                  <p><span className="text-[#39ff14]">✓</span> daily-outreach &nbsp;&nbsp;&nbsp; 6:00 AM ET &nbsp; <span className="text-[#39ff14]">running</span></p>
+                  <p><span className="text-[#39ff14]">✓</span> market-report &nbsp;&nbsp;&nbsp; 5:30 AM PT &nbsp; <span className="text-[#39ff14]">running</span></p>
+                  <p><span className="text-[#39ff14]">✓</span> intel-scan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8:00 AM MT &nbsp; <span className="text-[#39ff14]">running</span></p>
+                  <p><span className="text-cyan">$</span> <span className="animate-blink">_</span></p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Problem Section */}
+      {/* What We Build */}
       <section className="section-alt" style={{ padding: "6rem 2rem" }}>
         <div className="container mx-auto max-w-[1100px]">
           <div className="text-center mb-12">
-            <div className="section-label">The Problem</div>
-            <h2 className="section-title">Your team is drowning in busywork</h2>
-            <p className="section-sub mx-auto text-center">
-              Every hour spent on repetitive tasks is an hour not spent building your product.
-            </p>
+            <div className="section-label">What We Build</div>
+            <h2 className="section-title">Real systems. Running in production.</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {painPoints.map((point, i) => (
-              <div key={i} className="glass-card p-8 text-center transition-all duration-300 hover:border-[rgba(0,240,255,.3)] hover:shadow-neon-cyan">
-                <div className="flex justify-center mb-4">{point.icon}</div>
-                <p className="text-text-main text-sm font-medium">{point.text}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {capabilities.map((cap) => (
+              <div key={cap.title} className="glass-card p-8 text-center transition-all duration-300 hover:border-[rgba(0,240,255,.3)] hover:shadow-neon-cyan">
+                <div className="flex justify-center mb-4">{cap.icon}</div>
+                <h3 className="text-text-main font-semibold text-[1.05rem] mb-2">{cap.title}</h3>
+                <p className="text-sm text-body-color">{cap.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Solution Section */}
+      {/* In Production */}
       <section style={{ padding: "6rem 2rem" }}>
         <div className="container mx-auto max-w-[1100px]">
           <div className="text-center mb-12">
-            <div className="section-label">Your AI Team</div>
-            <h2 className="section-title">Meet your new digital team</h2>
-            <p className="section-sub mx-auto text-center">
-              AI agents purpose-built for the work that slows you down.
-            </p>
+            <div className="section-label">In Production</div>
+            <h2 className="section-title">Not demos. Deployed systems.</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredAgents.map((agent) => (
-              <div key={agent.type} className="team-card text-center">
-                <div className="flex justify-center mb-4">
-                  <PixelAgent type={agent.type} size={64} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {projects.map((project) => (
+              <div key={project.title} className="glass-card-hover p-8">
+                <h3 className="text-text-main font-semibold text-[1.1rem] mb-3">{project.title}</h3>
+                <p className="text-sm text-body-color mb-4">{project.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.stack.map((tech, i) => (
+                    <span key={i} className="text-xs px-2 py-0.5 rounded font-medium" style={{ background: "rgba(0,240,255,.08)", color: "#00f0ff", border: "1px solid rgba(0,240,255,.15)" }}>
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-                <h3 className="text-text-main font-semibold text-[1.15rem] mb-2">{agent.name}</h3>
-                <p className="text-sm text-body-color">{agent.role}</p>
               </div>
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/agents" className="text-cyan text-sm hover:text-magenta transition-colors">
-              See all agents &rarr;
+            <Link href="/work" className="text-cyan text-sm hover:text-magenta transition-colors">
+              See all projects &rarr;
             </Link>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Process */}
       <section className="section-alt" style={{ padding: "6rem 2rem" }}>
         <div className="container mx-auto max-w-[1100px]">
           <div className="text-center mb-12">
-            <div className="section-label">How It Works</div>
-            <h2 className="section-title">Three Steps to Your AI Workforce</h2>
-            <p className="section-sub mx-auto text-center">
-              From onboarding to deployment in days, not months.
-            </p>
+            <div className="section-label">Process</div>
+            <h2 className="section-title">Discovery → Build → Deploy → Iterate</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <PixelDiscoveryIcon size={48} color="#00f0ff" />,
-                step: "01",
-                title: "Discovery",
-                desc: "We learn your business, workflows, and pain points",
-              },
-              {
-                icon: <PixelDeployIcon size={48} color="#ff00aa" />,
-                step: "02",
-                title: "Deployment",
-                desc: "We configure and deploy your AI agent team",
-              },
-              {
-                icon: <PixelManageIcon size={48} color="#9b59ff" />,
-                step: "03",
-                title: "Management",
-                desc: "We keep your agents running, learning, and improving",
-              },
-            ].map((item) => (
-              <div key={item.step} className="glass-card p-8 pl-[4.5rem] relative transition-all duration-300 hover:border-[rgba(0,240,255,.25)] hover:shadow-neon-cyan">
-                <span className="absolute left-6 top-7 text-[1.6rem] font-extrabold text-gradient-neon">
-                  {item.step}
-                </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {steps.map((item) => (
+              <div key={item.num} className="glass-card p-8 pl-[4.5rem] relative transition-all duration-300 hover:border-[rgba(0,240,255,.25)] hover:shadow-neon-cyan">
+                <span className="absolute left-6 top-7 text-[1.6rem] font-extrabold text-gradient-neon">{item.num}</span>
                 <h3 className="text-text-main font-semibold text-[1.05rem] mb-2">{item.title}</h3>
                 <p className="text-sm text-body-color">{item.desc}</p>
               </div>
@@ -183,49 +170,37 @@ export default function Home() {
         <div className="container mx-auto max-w-[1100px]">
           <div className="text-center mb-12">
             <div className="section-label">Pricing</div>
-            <h2 className="section-title">Simple Pricing</h2>
-            <p className="section-sub mx-auto text-center">$1,000 one-time setup + monthly retainer</p>
+            <h2 className="section-title">Transparent rates. No tiers.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {pricingPreview.map((plan) => (
-              <div
-                key={plan.tier}
-                className={`glass-card p-8 text-center transition-all duration-300 hover:border-[rgba(0,240,255,.3)] hover:shadow-neon-cyan ${
-                  plan.highlight ? "neon-border-cyan" : ""
-                }`}
-              >
+            {pricing.map((plan) => (
+              <div key={plan.tier} className="glass-card p-8 text-center transition-all duration-300 hover:border-[rgba(0,240,255,.3)] hover:shadow-neon-cyan">
                 <h3 className="text-text-main font-semibold mb-2">{plan.tier}</h3>
                 <div className="mb-3">
                   <span className="text-2xl font-bold text-text-main">{plan.price}</span>
-                  <span className="text-body-color text-sm">{plan.period}</span>
+                  <span className="text-body-color text-sm ml-1">{plan.detail}</span>
                 </div>
-                <p className="text-sm text-body-color">{plan.agents}</p>
+                <p className="text-sm text-body-color">{plan.desc}</p>
               </div>
             ))}
           </div>
           <div className="text-center mt-8">
             <Link href="/pricing" className="text-cyan text-sm hover:text-magenta transition-colors">
-              See full pricing details &rarr;
+              Full pricing details &rarr;
             </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA Banner */}
+      {/* CTA */}
       <section className="text-center" style={{ padding: "6rem 2rem" }}>
         <h2 className="section-title">
-          Ready to Deploy Your{" "}
-          <span className="text-gradient-neon">AI Team</span>?
+          Ready to <span className="text-gradient-neon">automate</span>?
         </h2>
         <p className="text-body-color mb-8 text-[1.1rem]">
-          Let&apos;s talk about what your business needs.
+          Let&apos;s talk about what your business actually needs.
         </p>
-        <Link
-          href="/contact"
-          className="btn-primary"
-        >
-          Talk to Us
-        </Link>
+        <Link href="/contact" className="btn-primary">Talk to Us</Link>
       </section>
     </>
   );

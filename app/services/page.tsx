@@ -2,68 +2,69 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   PixelSetupIcon,
+  PixelDeployIcon,
+  PixelBrainIcon,
   PixelManageIcon,
-  PixelServerIcon,
-  PixelHandoffIcon,
 } from "@/components/PixelIcons";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "AI agent setup, deployment, managed services, and hosting for small SaaS startups.",
+    "AI automation services: OpenClaw setup, custom builds, multi-agent deployment, and ongoing management.",
 };
 
 const services = [
   {
     icon: <PixelSetupIcon size={56} color="#00f0ff" />,
-    title: "Setup & Deployment",
-    price: "$1,000 one-time",
-    timeline: "3-5 business days",
+    title: "OpenClaw Setup",
+    price: "$1,000 flat",
+    timeline: "1–2 days",
     items: [
-      "Discovery call to map your workflows",
-      "Agent architecture design",
-      "Workspace configuration",
-      "Telegram bot creation",
-      "Notion workflow setup",
-      "Deployment to your infrastructure or ours",
+      "Install and configure OpenClaw on your hardware or VPS",
+      "Pair Telegram bot as control plane",
+      "Deploy first agent with cron schedule",
+      "Handoff docs and operator walkthrough",
     ],
+    outcome: "You walk away with a running system.",
+  },
+  {
+    icon: <PixelDeployIcon size={56} color="#ff00aa" />,
+    title: "Custom Automation Build",
+    price: "From $1,500 / project-based",
+    timeline: "1–3 weeks",
+    items: [
+      "Data pipelines (ingest, normalize, enrich)",
+      "Scheduled agents for reports, outreach, monitoring",
+      "API integrations (Notion, Google, custom)",
+      "MCP tool development",
+    ],
+    outcome: "Purpose-built automation, tested and deployed.",
+  },
+  {
+    icon: <PixelBrainIcon size={56} color="#9b59ff" />,
+    title: "Multi-Agent Deployment",
+    price: "From $2,500",
+    timeline: "2–4 weeks",
+    items: [
+      "Multiple specialized agents with defined roles",
+      "Cron schedules and orchestration",
+      "Voice/personality calibration",
+      "Notion, Telegram, Slack integration",
+    ],
+    outcome: "A coordinated system, not a collection of chatbots.",
   },
   {
     icon: <PixelManageIcon size={56} color="#9b59ff" />,
-    title: "Managed Services",
-    price: "Monthly retainer",
-    timeline: "Ongoing",
+    title: "Ongoing Management",
+    price: "$500–1,500/mo",
+    timeline: "Monthly retainer",
     items: [
-      "Ongoing agent monitoring and tuning",
-      "Memory and context optimization",
-      "New agent additions",
-      "Workflow adjustments",
-      "Priority support",
+      "System monitoring and uptime",
+      "Agent tuning and prompt optimization",
+      "New agent development",
+      "Priority support and incident response",
     ],
-  },
-  {
-    icon: <PixelServerIcon size={56} color="#39ff14" />,
-    title: "Hosting",
-    price: "Add-on",
-    timeline: "Always-on",
-    items: [
-      "Dedicated Mac Mini infrastructure",
-      "Tailscale secure networking",
-      "Automated backups",
-      "99.9% uptime target",
-    ],
-  },
-  {
-    icon: <PixelHandoffIcon size={56} color="#ffe600" />,
-    title: "Handoff Package",
-    price: "Included",
-    timeline: "30-day support window",
-    items: [
-      "Full documentation",
-      "Training session",
-      "Source config and workspace files",
-      "30-day support window",
-    ],
+    outcome: "We keep it running. You keep building.",
   },
 ];
 
@@ -73,13 +74,12 @@ export default function ServicesPage() {
       {/* Header */}
       <section style={{ padding: "6rem 2rem 2rem" }}>
         <div className="container mx-auto max-w-[1100px] text-center">
-          <div className="section-label">What We Do</div>
+          <div className="section-label">Services</div>
           <h1 className="section-title">
-            Our <span className="text-gradient-neon">Services</span>
+            What We <span className="text-gradient-neon">Build</span>
           </h1>
           <p className="section-sub mx-auto text-center">
-            From discovery to deployment to ongoing management — we handle
-            everything so your AI workforce runs smoothly.
+            Four ways to work with us. All scoped, all delivered.
           </p>
         </div>
       </section>
@@ -104,7 +104,7 @@ export default function ServicesPage() {
                         {service.timeline}
                       </span>
                     </div>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mb-4">
                       {service.items.map((item) => (
                         <li
                           key={item}
@@ -115,6 +115,7 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
+                    <p className="text-sm italic text-cyan/70">{service.outcome}</p>
                   </div>
                 </div>
               </div>
@@ -125,18 +126,12 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section className="text-center" style={{ padding: "0 2rem 6rem" }}>
-        <h2 className="section-title">
-          Ready to get started?
-        </h2>
+        <h2 className="section-title">Know what you need?</h2>
         <p className="text-body-color mb-8 max-w-xl mx-auto">
-          Book a discovery call and we&apos;ll map out your AI workforce in
-          30 minutes.
+          Reach out. We&apos;ll scope it in 30 minutes.
         </p>
-        <Link
-          href="/contact"
-          className="btn-primary"
-        >
-          Book a Discovery Call
+        <Link href="/contact" className="btn-primary">
+          Get in Touch
         </Link>
       </section>
     </>

@@ -5,16 +5,16 @@ import "@/styles/index.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "WintermuteDev — AI Digital Workers for Startups",
+    default: "WintermuteDev — AI Automation & Workflow Engineering",
     template: "%s | WintermuteDev",
   },
   description:
-    "We deploy and manage teams of AI agents that handle research, content, development, and operations for small SaaS startups.",
+    "We build AI-powered automation systems, deploy OpenClaw agents, and engineer custom workflows for businesses ready to operate differently.",
   metadataBase: new URL("https://wintermutedev.com"),
   openGraph: {
-    title: "WintermuteDev — AI Digital Workers for Startups",
+    title: "WintermuteDev — AI Automation & Workflow Engineering",
     description:
-      "We deploy and manage teams of AI agents that handle research, content, development, and operations for small SaaS startups.",
+      "We build AI-powered automation systems, deploy OpenClaw agents, and engineer custom workflows for businesses ready to operate differently.",
     siteName: "WintermuteDev",
     type: "website",
   },
