@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Logo from "./Logo";
 
 const navLinks = [
   { label: "Services", href: "/services" },
@@ -27,17 +28,12 @@ export default function Header() {
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[12px]"
       style={{
         background: "rgba(10,10,18,.85)",
-        borderBottom: "1px solid rgba(0,240,255,.1)",
+        borderBottom: "1px solid rgba(62, 120, 178,.1)",
       }}
     >
       <div className="container mx-auto max-w-[1200px] px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0">
-            <span className="text-[1.3rem] font-bold tracking-tight text-text-main">
-              Wintermute<span className="text-cyan">Dev</span>
-            </span>
-          </Link>
+          <Logo />
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">

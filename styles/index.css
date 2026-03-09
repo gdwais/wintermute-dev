@@ -41,7 +41,7 @@
   /* Cards */
   .glass-card {
     @apply bg-surface border rounded-xl;
-    border-color: rgba(0, 240, 255, 0.08);
+    border-color: rgba(62, 120, 178, 0.08);
   }
 
   .glass-card-hover {
@@ -49,14 +49,14 @@
   }
 
   .glass-card-hover:hover {
-    border-color: rgba(0, 240, 255, 0.3);
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    border-color: rgba(62, 120, 178, 0.3);
+    box-shadow: 0 0 20px rgba(62, 120, 178, 0.3);
   }
 
   /* Team/agent cards with magenta glow */
   .team-card {
     @apply bg-surface rounded-xl transition-all duration-300 relative overflow-hidden;
-    border: 1px solid rgba(255, 0, 170, 0.08);
+    border: 1px solid rgba(227, 99, 151, 0.08);
     padding: 2rem;
   }
 
@@ -67,14 +67,14 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #00f0ff, #ff00aa);
+    background: linear-gradient(90deg, #3E78B2, #E36397);
     opacity: 0;
     transition: opacity 0.3s;
   }
 
   .team-card:hover {
-    border-color: rgba(255, 0, 170, 0.4);
-    box-shadow: 0 0 20px rgba(255, 0, 170, 0.3);
+    border-color: rgba(227, 99, 151, 0.4);
+    box-shadow: 0 0 20px rgba(227, 99, 151, 0.3);
     transform: translateY(-3px);
   }
 
@@ -92,12 +92,12 @@
 
   .neon-text-cyan {
     @apply text-cyan;
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    text-shadow: 0 0 10px rgba(62, 120, 178, 0.5);
   }
 
   .neon-text-magenta {
     @apply text-magenta;
-    text-shadow: 0 0 10px rgba(255, 0, 170, 0.5);
+    text-shadow: 0 0 10px rgba(227, 99, 151, 0.5);
   }
 
   /* Primary button - gradient */
@@ -107,9 +107,9 @@
     border-radius: 8px;
     font-weight: 700;
     font-size: 1rem;
-    background: linear-gradient(135deg, #00f0ff, #ff00aa);
+    background: linear-gradient(135deg, #3E78B2, #E36397);
     color: #000;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    box-shadow: 0 0 20px rgba(62, 120, 178, 0.3);
     transition: all 0.3s;
     cursor: pointer;
     border: none;
@@ -117,13 +117,13 @@
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+    box-shadow: 0 0 30px rgba(62, 120, 178, 0.5);
     color: #000;
   }
 
   /* Nav CTA gradient */
   .nav-cta {
-    background: linear-gradient(135deg, #00f0ff, #ff00aa);
+    background: linear-gradient(135deg, #3E78B2, #E36397);
     color: #000;
     padding: 0.5rem 1.2rem;
     border-radius: 6px;
@@ -144,7 +144,7 @@
   }
 
   .why-item:hover {
-    background: rgba(0, 240, 255, 0.03);
+    background: rgba(62, 120, 178, 0.03);
   }
 
   .why-dot {
@@ -152,7 +152,7 @@
     width: 8px;
     height: 8px;
     margin-top: 0.5rem;
-    box-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+    box-shadow: 0 0 8px rgba(62, 120, 178, 0.5);
   }
 
   .scanline-overlay {

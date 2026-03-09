@@ -97,7 +97,7 @@ export default function PricingPage() {
             {plans.map((plan) => (
               <div
                 key={plan.title}
-                className={`glass-card p-8 transition-all duration-300 hover:border-[rgba(0,240,255,.3)] hover:shadow-neon-cyan ${
+                className={`glass-card p-8 transition-all duration-300 hover:border-[rgba(62, 120, 178,.3)] hover:shadow-neon-cyan ${
                   plan.highlight ? "neon-border-cyan" : ""
                 }`}
               >

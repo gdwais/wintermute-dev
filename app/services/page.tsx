@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: <PixelSetupIcon size={56} color="#00f0ff" />,
+    icon: <PixelSetupIcon size={56} color="#3E78B2" />,
     title: "OpenClaw Setup",
     price: "$1,000 flat",
     timeline: "1–2 days",
@@ -28,7 +28,7 @@ const services = [
     outcome: "You walk away with a running system.",
   },
   {
-    icon: <PixelDeployIcon size={56} color="#ff00aa" />,
+    icon: <PixelDeployIcon size={56} color="#E36397" />,
     title: "Custom Automation Build",
     price: "From $1,500 / project-based",
     timeline: "1–3 weeks",

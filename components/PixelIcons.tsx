@@ -6,7 +6,7 @@ interface IconProps {
   className?: string;
 }
 
-export function PixelSearchIcon({ size = 32, color = "#00f0ff", className = "" }: IconProps) {
+export function PixelSearchIcon({ size = 32, color = "#3E78B2", className = "" }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" className={className} style={{ imageRendering: "pixelated" }}>
       <rect x="8" y="4" width="12" height="4" fill={color} />
@@ -34,7 +34,7 @@ export function PixelDocIcon({ size = 32, color = "#9b59ff", className = "" }: I
   );
 }
 
-export function PixelBrainIcon({ size = 32, color = "#ff00aa", className = "" }: IconProps) {
+export function PixelBrainIcon({ size = 32, color = "#E36397", className = "" }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" className={className} style={{ imageRendering: "pixelated" }}>
       <rect x="8" y="4" width="16" height="4" fill={color} />
@@ -64,7 +64,7 @@ export function PixelTaskIcon({ size = 32, color = "#39ff14", className = "" }: 
 }
 
 // Step icons for How It Works
-export function PixelDiscoveryIcon({ size = 48, color = "#00f0ff", className = "" }: IconProps) {
+export function PixelDiscoveryIcon({ size = 48, color = "#3E78B2", className = "" }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" className={className} style={{ imageRendering: "pixelated" }}>
       {/* Magnifying glass + lightbulb hybrid */}
@@ -84,7 +84,7 @@ export function PixelDiscoveryIcon({ size = 48, color = "#00f0ff", className = "
   );
 }
 
-export function PixelDeployIcon({ size = 48, color = "#ff00aa", className = "" }: IconProps) {
+export function PixelDeployIcon({ size = 48, color = "#E36397", className = "" }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" className={className} style={{ imageRendering: "pixelated" }}>
       {/* Rocket / deploy */}
@@ -121,7 +121,7 @@ export function PixelManageIcon({ size = 48, color = "#9b59ff", className = "" }
 }
 
 // Service icons
-export function PixelSetupIcon({ size = 48, color = "#00f0ff", className = "" }: IconProps) {
+export function PixelSetupIcon({ size = 48, color = "#3E78B2", className = "" }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" className={className} style={{ imageRendering: "pixelated" }}>
       {/* Wrench / assembly */}

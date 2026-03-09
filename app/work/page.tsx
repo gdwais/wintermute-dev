@@ -45,7 +45,7 @@ export default function WorkPage() {
       <section style={{ padding: "6rem 2rem 2rem" }}>
         <div className="container mx-auto max-w-[1100px] text-center">
           <div className="section-label">Work</div>
-          <h1 className="section-title">Systems in Production</h1>
+          <h1 className="section-title">Systems in <span className="text-gradient-neon">Production</span></h1>
           <p className="section-sub mx-auto text-center">
             Real projects. Anonymized where needed. All running.
           </p>
@@ -72,7 +72,7 @@ export default function WorkPage() {
       </section>
 
       <section className="text-center" style={{ padding: "0 2rem 6rem" }}>
-        <h2 className="section-title">Have a system in mind?</h2>
+        <h2 className="section-title">Have a system in <span className="text-gradient-neon">mind</span>?</h2>
         <p className="text-body-color mb-8 max-w-xl mx-auto">
           We&apos;ll tell you if we can build it — and what it&apos;ll take.
         </p>

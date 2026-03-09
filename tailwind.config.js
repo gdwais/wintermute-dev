@@ -25,14 +25,14 @@ module.exports = {
         surface: "#121220",
         "surface-light": "#1a1a2e",
         cyan: {
-          DEFAULT: "#00f0ff",
-          dark: "#00a8b3",
-          glow: "rgba(0, 240, 255, 0.15)",
+          DEFAULT: "#3E78B2",
+          dark: "#2d5a8a",
+          glow: "rgba(62, 120, 178, 0.15)",
         },
         magenta: {
-          DEFAULT: "#ff00aa",
-          dark: "#b30077",
-          glow: "rgba(255, 0, 170, 0.15)",
+          DEFAULT: "#E36397",
+          dark: "#b34d78",
+          glow: "rgba(227, 99, 151, 0.15)",
         },
         purple: {
           DEFAULT: "#9b59ff",
@@ -56,8 +56,8 @@ module.exports = {
         sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "Roboto", "sans-serif"],
       },
       boxShadow: {
-        "neon-cyan": "0 0 20px rgba(0, 240, 255, 0.3)",
-        "neon-magenta": "0 0 20px rgba(255, 0, 170, 0.3)",
+        "neon-cyan": "0 0 20px rgba(62, 120, 178, 0.3)",
+        "neon-magenta": "0 0 20px rgba(227, 99, 151, 0.3)",
         "neon-purple": "0 0 20px rgba(155, 89, 255, 0.3)",
         glass: "0 8px 32px rgba(0, 0, 0, 0.3)",
       },
