@@ -160,6 +160,45 @@ export function PixelServerIcon({ size = 48, color = "#39ff14", className = "" }
   );
 }
 
+export function PixelCodeIcon({ size = 32, color = "#3E78B2", className = "" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" className={className} style={{ imageRendering: "pixelated" }}>
+      {/* Code brackets with magnifying glass */}
+      <rect x="4" y="8" width="4" height="4" fill={color} />
+      <rect x="8" y="4" width="4" height="4" fill={color} />
+      <rect x="4" y="16" width="4" height="4" fill={color} />
+      <rect x="8" y="20" width="4" height="4" fill={color} />
+      <rect x="20" y="4" width="4" height="4" fill={color} />
+      <rect x="24" y="8" width="4" height="4" fill={color} />
+      <rect x="24" y="16" width="4" height="4" fill={color} />
+      <rect x="20" y="20" width="4" height="4" fill={color} />
+      {/* Center dot */}
+      <rect x="14" y="10" width="4" height="4" fill={color} opacity="0.7" />
+      <rect x="14" y="16" width="4" height="4" fill={color} opacity="0.5" />
+      {/* Checkmark */}
+      <rect x="18" y="24" width="4" height="4" fill={color} opacity="0.6" />
+      <rect x="14" y="28" width="4" height="4" fill={color} opacity="0.4" />
+    </svg>
+  );
+}
+
+export function PixelAnalyticsIcon({ size = 32, color = "#9b59ff", className = "" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" className={className} style={{ imageRendering: "pixelated" }}>
+      {/* Bar chart with trend line */}
+      <rect x="4" y="22" width="4" height="6" fill={color} opacity="0.5" />
+      <rect x="10" y="16" width="4" height="12" fill={color} opacity="0.6" />
+      <rect x="16" y="12" width="4" height="16" fill={color} opacity="0.8" />
+      <rect x="22" y="6" width="4" height="22" fill={color} />
+      {/* Base line */}
+      <rect x="2" y="28" width="28" height="2" fill={color} opacity="0.4" />
+      {/* Trend arrow */}
+      <rect x="24" y="2" width="4" height="4" fill={color} opacity="0.6" />
+      <rect x="28" y="2" width="2" height="2" fill={color} opacity="0.4" />
+    </svg>
+  );
+}
+
 export function PixelHandoffIcon({ size = 48, color = "#ffe600", className = "" }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" className={className} style={{ imageRendering: "pixelated" }}>

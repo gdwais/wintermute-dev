@@ -8,7 +8,7 @@ export default function Footer() {
     >
       <div className="text-text-main font-semibold">WintermuteDev</div>
       <p className="text-body-color text-sm mt-1">
-        wintermutedev.com — AI automation systems, built and deployed.
+        wintermutedev.com — AI systems and automation infrastructure, built and deployed.
       </p>
     </footer>
   );

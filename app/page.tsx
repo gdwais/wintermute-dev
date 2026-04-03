@@ -2,7 +2,6 @@
 import AnimatedTerminal from "@/components/AnimatedTerminal";
 import Link from "next/link";
 import {
-  PixelSearchIcon,
   PixelDocIcon,
   PixelBrainIcon,
   PixelTaskIcon,
@@ -10,45 +9,54 @@ import {
   PixelDeployIcon,
   PixelManageIcon,
   PixelSetupIcon,
+  PixelCodeIcon,
+  PixelAnalyticsIcon,
 } from "@/components/PixelIcons";
 
 const capabilities = [
-  { icon: <PixelTaskIcon size={40} color="#3E78B2" />, title: "Scheduled Agents", desc: "Cron jobs that think. Daily reports, outreach, monitoring — running autonomously." },
-  { icon: <PixelDocIcon size={40} color="#9b59ff" />, title: "Data Pipelines", desc: "Ingest, normalize, enrich. Legacy exports into modern schemas." },
-  { icon: <PixelSearchIcon size={40} color="#E36397" />, title: "Control Planes", desc: "Telegram and Slack bots as operator interfaces for your automation." },
-  { icon: <PixelBrainIcon size={40} color="#9b59ff" />, title: "Multi-Agent Systems", desc: "Specialized agents coordinating across content, intel, operations." },
-  { icon: <PixelSetupIcon size={40} color="#3E78B2" />, title: "MCP Integrations", desc: "Connect Notion, Google Workspace, APIs, databases. Tool use, not toy demos." },
+  { icon: <PixelBrainIcon size={40} color="#3E78B2" />, title: "AI Agent Systems", desc: "Multi-agent deployments with scheduled automation, monitoring, and fleet management at scale." },
+  { icon: <PixelSetupIcon size={40} color="#E36397" />, title: "Application Architecture", desc: "Full-stack SaaS builds and refactors. TypeScript, React, Node, Postgres, Supabase, Vercel." },
+  { icon: <PixelDocIcon size={40} color="#9b59ff" />, title: "Data Pipelines", desc: "Ingest, normalize, enrich. Legacy platform exports into modern schemas. API integrations." },
+  { icon: <PixelCodeIcon size={40} color="#3E78B2" />, title: "Code Audits & Refactoring", desc: "Security review, architecture assessment, monolith decomposition, CI/CD setup." },
+  { icon: <PixelTaskIcon size={40} color="#E36397" />, title: "Embedded AI Services", desc: "AI features that plug into your existing platform. Content generation, analysis, intelligent workflows." },
+  { icon: <PixelAnalyticsIcon size={40} color="#9b59ff" />, title: "Reporting & Analytics", desc: "Multi-platform data aggregation, automated reports, dashboards, insights." },
 ];
 
 const projects = [
   {
-    title: "Federal BD Outreach Engine",
-    desc: "Automated daily outreach generation from USASpending contract data. AI email generation with personalized hooks, queued to Google Docs for human review.",
-    stack: ["OpenClaw", "TypeScript", "USASpending API", "Google Docs API", "Telegram", "Cron"],
+    title: "Tax Planning Platform Overhaul",
+    desc: "5,385-line monolith → typed modular architecture. 336 tests, CI/CD, security hardening. Full audit + restructure.",
+    stack: ["TypeScript", "React", "Node.js", "PostgreSQL", "CI/CD", "Security Audit"],
   },
   {
-    title: "Multi-Agent Content & Intel System",
-    desc: "Five-agent deployment for a fintech firm. Content creation, competitive intelligence, PR outreach, executive briefings. 22 scheduled cron jobs.",
-    stack: ["OpenClaw", "Multi-Agent", "Notion", "Telegram", "Cron (22 jobs)", "MCP"],
+    title: "AI Practice Growth Platform",
+    desc: "Embedded AI services for a wealth management TAMP serving 235+ advisors. Website generation, content pipeline, outreach automation.",
+    stack: ["AI/ML", "TypeScript", "React", "Content Pipeline", "Automation"],
   },
   {
-    title: "Trading Operations Automation",
-    desc: "OpenClaw on Mac Studio for a trading desk. Automated database checks, trade validation, Bloomberg data bridge. Daily reports before market open.",
-    stack: ["OpenClaw", "Mac Studio", "PostgreSQL", "Bloomberg API", "Cron", "Telegram"],
+    title: "Multi-Agent Fleet Management",
+    desc: "Control plane for provisioning, monitoring, and managing AI agent instances across multiple client deployments.",
+    stack: ["Hatchery API", "Multi-Agent", "Telegram", "Fleet Management", "Monitoring"],
+  },
+  {
+    title: "Newsletter Automation Pipeline",
+    desc: "Automated reporting across 6 newsletter brands, 6M emails/day. Multi-platform data aggregation from ESP, revenue, and IVT systems.",
+    stack: ["Data Pipeline", "API Integrations", "Analytics", "Automation", "Reporting"],
   },
 ];
 
 const steps = [
-  { num: "01", title: "Discovery", desc: "We learn your workflows, data sources, and pain points.", icon: <PixelDiscoveryIcon size={48} color="#3E78B2" /> },
-  { num: "02", title: "Build", desc: "Custom automation, tested against real data.", icon: <PixelDeployIcon size={48} color="#E36397" /> },
-  { num: "03", title: "Deploy", desc: "OpenClaw instance, cron schedules, control plane, docs.", icon: <PixelSetupIcon size={48} color="#39ff14" /> },
-  { num: "04", title: "Iterate", desc: "Monitor, tune, expand. Your system gets better over time.", icon: <PixelManageIcon size={48} color="#9b59ff" /> },
+  { num: "01", title: "Discovery", desc: "We learn your workflows, data, and pain points. You get a clear scope and timeline.", icon: <PixelDiscoveryIcon size={48} color="#3E78B2" /> },
+  { num: "02", title: "Build", desc: "Custom architecture, tested against real data. Not a demo — production code.", icon: <PixelDeployIcon size={48} color="#E36397" /> },
+  { num: "03", title: "Deploy", desc: "Secure deployment with monitoring, CI/CD, documentation, and handoff.", icon: <PixelSetupIcon size={48} color="#39ff14" /> },
+  { num: "04", title: "Iterate", desc: "Ongoing retainer. Your system gets smarter and more capable over time.", icon: <PixelManageIcon size={48} color="#9b59ff" /> },
 ];
 
 const pricing = [
-  { tier: "Setup", price: "$1,000", detail: "flat", desc: "OpenClaw instance, Telegram bot, basic agent, handoff docs" },
-  { tier: "Custom Builds", price: "$150/hr", detail: "or fixed-fee", desc: "Data pipelines, scheduled agents, integrations" },
-  { tier: "Retainer", price: "$500–1,500", detail: "/mo", desc: "Monitoring, tuning, new agents, priority support" },
+  { tier: "Code Audit", price: "$500", detail: "flat", desc: "Full security + architecture review with prioritized findings" },
+  { tier: "Project Build", price: "Fixed-fee", detail: "scoped", desc: "Custom automation, app builds, multi-agent systems" },
+  { tier: "Retainer", price: "$500+", detail: "/mo", desc: "Monitoring, tuning, new capabilities, priority support" },
+  { tier: "Hourly", price: "$60", detail: "/hr", desc: "Overflow, ad-hoc requests, consulting" },
 ];
 
 export default function Home() {
@@ -63,11 +71,11 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="flex-1 text-center lg:text-left">
               <h1 className="text-text-main leading-[1.1] mb-6" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 800, letterSpacing: "-0.03em" }}>
-                Automate the work{" "}
-                <span className="text-gradient-neon">you shouldn&apos;t be doing.</span>
+                AI systems that run the parts of your business{" "}
+                <span className="text-gradient-neon">you shouldn&apos;t be doing manually.</span>
               </h1>
               <p className="text-body-color leading-relaxed mb-10 max-w-[640px] mx-auto lg:mx-0" style={{ fontSize: "clamp(1.1rem, 2vw, 1.35rem)" }}>
-                We build AI-powered automation systems — data pipelines, scheduled agents, workflow integrations — so you can focus on your actual business.
+                We build automation infrastructure, AI-powered applications, and intelligent agent systems — from architecture through production. Not chatbots. Systems.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
                 <Link href="/contact" className="btn-primary">Talk to Us</Link>
@@ -111,14 +119,14 @@ export default function Home() {
             <div className="section-label">In Production</div>
             <h2 className="section-title">Not demos. Deployed systems.</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {projects.map((project) => (
               <div key={project.title} className="glass-card-hover p-8">
                 <h3 className="text-text-main font-semibold text-[1.1rem] mb-3">{project.title}</h3>
                 <p className="text-sm text-body-color mb-4">{project.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.stack.map((tech, i) => (
-                    <span key={i} className="text-xs px-2 py-0.5 rounded font-medium" style={{ background: "rgba(62, 120, 178,.08)", color: "#3E78B2", border: "1px solid rgba(62, 120, 178,.15)" }}>
+                    <span key={i} className="tech-pill">
                       {tech}
                     </span>
                   ))}
@@ -158,9 +166,9 @@ export default function Home() {
         <div className="container mx-auto max-w-[1100px]">
           <div className="text-center mb-12">
             <div className="section-label">Pricing</div>
-            <h2 className="section-title">Transparent rates. No tiers.</h2>
+            <h2 className="section-title">Transparent pricing. Scoped to fit.</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {pricing.map((plan) => (
               <div key={plan.tier} className="glass-card p-8 text-center transition-all duration-300 hover:border-[rgba(62, 120, 178,.3)] hover:shadow-neon-cyan">
                 <h3 className="text-text-main font-semibold mb-2">{plan.tier}</h3>

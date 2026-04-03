@@ -1,68 +1,96 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  PixelSetupIcon,
-  PixelDeployIcon,
   PixelBrainIcon,
+  PixelDeployIcon,
+  PixelSearchIcon,
+  PixelTaskIcon,
+  PixelDocIcon,
   PixelManageIcon,
 } from "@/components/PixelIcons";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "AI automation services: OpenClaw setup, custom builds, multi-agent deployment, and ongoing management.",
+    "AI systems, application development, code audits, data pipelines, and ongoing management. Production-grade, not proof-of-concept.",
 };
 
 const services = [
   {
-    icon: <PixelSetupIcon size={56} color="#3E78B2" />,
-    title: "OpenClaw Setup",
-    price: "$1,000 flat",
-    timeline: "1–2 days",
+    icon: <PixelBrainIcon size={56} color="#3E78B2" />,
+    title: "AI Agent Systems",
+    price: "From $1,000",
+    timeline: "1–4 weeks",
     items: [
-      "Install and configure OpenClaw on your hardware or VPS",
-      "Pair Telegram bot as control plane",
-      "Deploy first agent with cron schedule",
-      "Handoff docs and operator walkthrough",
+      "OpenClaw setup, multi-agent deployments, cron scheduling",
+      "Fleet management and provisioning at scale",
+      "Telegram/Slack control planes",
+      "Monitoring, alerting, and orchestration",
     ],
-    outcome: "You walk away with a running system.",
+    outcome: "Autonomous systems, not chatbots.",
   },
   {
     icon: <PixelDeployIcon size={56} color="#E36397" />,
-    title: "Custom Automation Build",
-    price: "From $1,500 / project-based",
-    timeline: "1–3 weeks",
+    title: "Application Development",
+    price: "From $5,000",
+    timeline: "2–6 weeks",
     items: [
-      "Data pipelines (ingest, normalize, enrich)",
-      "Scheduled agents for reports, outreach, monitoring",
-      "API integrations (Notion, Google, custom)",
-      "MCP tool development",
+      "Full-stack SaaS: React, Node/TypeScript, Postgres",
+      "Supabase, Vercel, AWS deployment",
+      "Architecture, build, deploy, CI/CD",
+      "Monolith decomposition and refactoring",
     ],
-    outcome: "Purpose-built automation, tested and deployed.",
+    outcome: "Production code, not a prototype.",
   },
   {
-    icon: <PixelBrainIcon size={56} color="#9b59ff" />,
-    title: "Multi-Agent Deployment",
-    price: "From $2,500",
+    icon: <PixelSearchIcon size={56} color="#9b59ff" />,
+    title: "Code Audit & Refactoring",
+    price: "$500 audit",
+    timeline: "1–2 days",
+    items: [
+      "Security assessment and architecture review",
+      "Written report with prioritized findings",
+      "TypeScript conversion and test suite creation",
+      "Refactoring scoped per project",
+    ],
+    outcome: "Know exactly what needs fixing, and why.",
+  },
+  {
+    icon: <PixelTaskIcon size={56} color="#3E78B2" />,
+    title: "Embedded AI Services",
+    price: "Scoped per engagement",
     timeline: "2–4 weeks",
     items: [
-      "Multiple specialized agents with defined roles",
-      "Cron schedules and orchestration",
-      "Voice/personality calibration",
-      "Notion, Telegram, Slack integration",
+      "AI features integrated into your existing platform",
+      "Content generation and intelligent workflows",
+      "Analysis engines and recommendation systems",
+      "Microservice architecture",
     ],
-    outcome: "A coordinated system, not a collection of chatbots.",
+    outcome: "AI that fits your product, not the other way around.",
+  },
+  {
+    icon: <PixelDocIcon size={56} color="#E36397" />,
+    title: "Data & Reporting Automation",
+    price: "From $2,500",
+    timeline: "1–3 weeks",
+    items: [
+      "Multi-platform API integrations",
+      "Automated reporting pipelines and dashboards",
+      "Data normalization from legacy systems",
+      "CSV/PDF export and admin tooling",
+    ],
+    outcome: "Your data, unified and actionable.",
   },
   {
     icon: <PixelManageIcon size={56} color="#9b59ff" />,
     title: "Ongoing Management",
-    price: "$500–1,500/mo",
+    price: "From $500/mo",
     timeline: "Monthly retainer",
     items: [
-      "System monitoring and uptime",
-      "Agent tuning and prompt optimization",
-      "New agent development",
+      "Monitoring, optimization, new capabilities",
       "Priority support and incident response",
+      "Scaled to scope and complexity",
+      "Enterprise engagements welcome",
     ],
     outcome: "We keep it running. You keep building.",
   },
@@ -79,7 +107,7 @@ export default function ServicesPage() {
             What We <span className="text-gradient-neon">Build</span>
           </h1>
           <p className="section-sub mx-auto text-center">
-            Four ways to work with us. All scoped, all delivered.
+            How we work with you. All scoped, all delivered.
           </p>
         </div>
       </section>

@@ -4,44 +4,55 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Simple, transparent pricing for AI automation systems. No tiers, no per-agent pricing.",
+    "Transparent pricing for AI systems, automation, and application development. Scoped to fit your needs.",
 };
 
 const plans = [
   {
-    title: "Setup",
-    price: "$1,000",
-    detail: "One-time flat fee",
+    title: "Code Audit",
+    price: "$500",
+    detail: "Flat fee",
     items: [
-      "OpenClaw instance configured and deployed",
-      "Telegram bot paired as control plane",
-      "First agent deployed with cron schedule",
-      "Handoff documentation",
-      "1–2 day delivery",
+      "Full security + architecture review",
+      "Written report with prioritized findings",
+      "Refactoring roadmap with effort estimates",
+      "1–2 day turnaround",
     ],
     highlight: false,
   },
   {
-    title: "Custom Builds",
-    price: "$150/hr",
-    detail: "Or fixed-fee for scoped projects",
+    title: "Project Build",
+    price: "Fixed-fee",
+    detail: "Scoped per engagement",
     items: [
-      "Data pipelines, integrations, scheduled agents",
-      "MCP tool development",
-      "Multi-agent orchestration from $2,500",
+      "AI agent deployments from $1,000",
+      "Custom automation from $2,500",
+      "Application builds/refactors from $5,000",
+      "Multi-agent systems from $5,000",
       "Scoped and estimated upfront",
     ],
     highlight: true,
   },
   {
-    title: "Retainer",
-    price: "$500–1,500/mo",
-    detail: "Scaled to system complexity",
+    title: "Monthly Retainer",
+    price: "From $500",
+    detail: "/mo",
     items: [
-      "Ongoing monitoring and uptime",
-      "Agent tuning and optimization",
-      "New agent development",
-      "Priority support",
+      "Scaled to scope and complexity",
+      "Monitoring, tuning, new capabilities",
+      "Priority support and iteration",
+      "Enterprise engagements welcome",
+    ],
+    highlight: false,
+  },
+  {
+    title: "Hourly",
+    price: "$60",
+    detail: "/hr",
+    items: [
+      "Overflow and ad-hoc requests",
+      "Consulting and advisory",
+      "Billed in 15-minute increments",
     ],
     highlight: false,
   },
@@ -49,28 +60,28 @@ const plans = [
 
 const faqs = [
   {
-    q: "What's OpenClaw?",
-    a: "OpenClaw is an AI agent orchestration platform. It runs on your hardware (Mac, Linux, VPS) and manages AI agents with cron scheduling, Telegram integration, and MCP tool use. We deploy and configure it for you.",
+    q: "What kind of systems do you build?",
+    a: "AI agent deployments, full-stack applications, data pipelines, reporting automation, and embedded AI features. We work across the stack — TypeScript, React, Node, Postgres, Supabase, Vercel, AWS — and specialize in production-grade systems, not proofs of concept.",
   },
   {
-    q: "Do I need my own hardware?",
-    a: "Not necessarily. We can deploy to a cloud VPS ($10–50/mo hosting cost) or your existing Mac/Linux machine. We'll recommend the right setup during discovery.",
+    q: "What's included in a code audit?",
+    a: "A full security and architecture review of your codebase. You get a written report with prioritized findings, a refactoring roadmap with effort estimates, and a follow-up call to walk through recommendations. Typical turnaround is 1–2 days.",
   },
   {
-    q: "What about API costs?",
-    a: "You provide your own API keys (Anthropic, OpenAI, etc.). Typical costs are $50–300/mo depending on usage. We optimize prompts and scheduling to keep costs low.",
+    q: "How is a project build priced?",
+    a: "Fixed-fee, scoped upfront. We define the deliverables, timeline, and cost before work begins. No hourly surprises. Complexity determines the price — an agent deployment starts around $1,000, a full application build starts around $5,000.",
   },
   {
-    q: "Can I manage the system myself after setup?",
-    a: "Yes. Every deployment includes handoff docs and a walkthrough. The Telegram bot gives you day-to-day control. We're available for retainer support if you want ongoing help.",
+    q: "What does a retainer include?",
+    a: "Monitoring, optimization, new feature development, and priority support. Retainers scale to your system's complexity — a single agent deployment is different from a multi-platform data pipeline. No upper limit on scope.",
   },
   {
-    q: "How long does a custom build take?",
-    a: "Simple automations: 1–2 weeks. Multi-agent systems: 2–4 weeks. We scope everything upfront so there are no surprises.",
+    q: "How long does a project take?",
+    a: "Code audits: 1–2 days. Simple automations: 1–2 weeks. Application builds: 2–6 weeks. Multi-agent systems: 2–4 weeks. We scope everything upfront so there are no surprises.",
   },
   {
     q: "Is my data secure?",
-    a: "Your agents run on your infrastructure. Nothing passes through our servers. VPS deployments include SSH hardening, firewall config, and encrypted connections via Tailscale.",
+    a: "We follow security best practices across every deployment. Infrastructure is hardened with proper access controls, encrypted connections, and monitoring. For self-hosted systems, nothing passes through our servers.",
   },
 ];
 
@@ -85,7 +96,7 @@ export default function PricingPage() {
             Simple <span className="text-gradient-neon">Rates</span>
           </h1>
           <p className="section-sub mx-auto text-center">
-            No tiers. No per-agent pricing. You pay for what we build.
+            Transparent pricing. Scoped to what you actually need.
           </p>
         </div>
       </section>
@@ -93,7 +104,7 @@ export default function PricingPage() {
       {/* Pricing Cards */}
       <section style={{ padding: "2rem 2rem 6rem" }}>
         <div className="container mx-auto max-w-[1100px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {plans.map((plan) => (
               <div
                 key={plan.title}

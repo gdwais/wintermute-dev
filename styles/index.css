@@ -173,6 +173,33 @@
     @apply translate-x-full;
   }
 
+  /* Project cards */
+  .project-card {
+    @apply bg-surface border rounded-xl transition-all duration-300;
+    border-color: rgba(62, 120, 178, 0.08);
+  }
+
+  .project-card:hover {
+    border-color: rgba(62, 120, 178, 0.3);
+    box-shadow: 0 0 20px rgba(62, 120, 178, 0.3);
+    transform: translateY(-3px);
+  }
+
+  /* Tech stack pills */
+  .tech-pill {
+    @apply text-xs px-2 py-0.5 rounded font-medium;
+    background: rgba(62, 120, 178, 0.08);
+    color: #3E78B2;
+    border: 1px solid rgba(62, 120, 178, 0.15);
+  }
+
+  .tech-pill-alt {
+    @apply text-xs px-2 py-0.5 rounded font-medium;
+    background: rgba(227, 99, 151, 0.08);
+    color: #E36397;
+    border: 1px solid rgba(227, 99, 151, 0.15);
+  }
+
   /* Alternating section bg */
   .section-alt {
     background: #0e0e1a;

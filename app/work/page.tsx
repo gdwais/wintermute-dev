@@ -3,38 +3,68 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Real automation projects, running in production. OpenClaw deployments, data pipelines, and multi-agent systems.",
+  description: "Real projects running in production. AI systems, application builds, data pipelines, and multi-agent deployments.",
 };
 
 const projects = [
   {
-    title: "Federal BD Outreach Engine",
-    desc: "Automated daily outreach generation from USASpending contract data. TypeScript preprocessing pipeline feeds AI email generation with personalized hooks. Output queued to Google Docs for human review. Telegram bot for operator control.",
-    stack: ["OpenClaw", "TypeScript", "USASpending API", "Google Docs API", "Telegram", "Cron"],
-    outcome: "60+ personalized outreach drafts per day, zero manual research.",
+    title: "Tax Planning Platform Security + Architecture Overhaul",
+    desc: "$11K audit and restructure of an AI-built tax planning engine. 5,385-line monolith decomposed into typed modular architecture. 336 tests written, CI/CD pipeline configured, security vulnerabilities patched. Full TypeScript conversion with strict mode.",
+    stack: ["TypeScript", "React", "Node.js", "PostgreSQL", "Jest", "CI/CD", "Security Audit"],
+    outcome: "From untested monolith to production-grade, type-safe architecture with 336 passing tests.",
+  },
+  {
+    title: "AI Practice Growth Platform",
+    desc: "Embedded AI services for a wealth management TAMP serving 235+ financial advisors. Automated website generation, content pipeline for advisor marketing, and outreach automation. AI-powered personalization at scale.",
+    stack: ["TypeScript", "React", "AI/ML", "Content Pipeline", "Supabase", "Automation"],
+    outcome: "235+ advisors served with AI-generated websites, content, and outreach.",
   },
   {
     title: "Multi-Agent Content & Intel System",
-    desc: "Five-agent deployment for a fintech firm. Content creation, competitive intelligence, PR outreach, executive briefings, and social distribution. 22 scheduled cron jobs across the system.",
-    stack: ["OpenClaw", "Multi-Agent", "Notion", "Telegram", "Cron (22 jobs)", "MCP"],
+    desc: "Five-agent deployment for a fintech firm. Content creation, competitive intelligence, PR outreach, executive briefings, and social distribution. 22 scheduled cron jobs. Post-deployment audit uncovered model name misconfigs, cron deduplication issues, and auth mixups — all resolved.",
+    stack: ["Multi-Agent", "AI Orchestration", "Notion", "Telegram", "Cron (22 jobs)", "MCP"],
     outcome: "Full content + intel operation running autonomously across 5 platforms.",
   },
   {
-    title: "Trading Operations Automation",
-    desc: "OpenClaw deployed on Mac Studio for a trading desk. Automated database checks, trade validation, Bloomberg data bridge. Daily reports generated before market open.",
-    stack: ["OpenClaw", "Mac Studio", "PostgreSQL", "Bloomberg API", "Cron", "Telegram"],
-    outcome: "Pre-market operations report delivered by 6am, every day.",
+    title: "Fleet Management Control Plane",
+    desc: "Hatchery API — a control plane for provisioning, monitoring, and managing AI agent instances across multiple client deployments. Telegram pairing for operator control. Health checks, instance lifecycle management, and deployment automation.",
+    stack: ["Hatchery API", "TypeScript", "Multi-Agent", "Telegram", "Fleet Management", "Monitoring"],
+    outcome: "Centralized control over distributed AI agent fleet.",
+  },
+  {
+    title: "Newsletter Automation Pipeline",
+    desc: "Automated reporting across 6 newsletter brands sending 6M emails/day. Multi-platform data aggregation from ESP, revenue, and IVT detection systems. Unified dashboard for cross-brand performance analysis.",
+    stack: ["Data Pipeline", "API Integrations", "Analytics", "Reporting", "Automation"],
+    outcome: "Six brands, one automated reporting pipeline. Zero manual data pulls.",
   },
   {
     title: "Property Management Data Pipeline",
-    desc: "Multi-platform import system handling exports from AppFolio, Vantaca, and Buildium. Normalizes inconsistent legacy data into a unified modern schema for an AI-native property management platform.",
-    stack: ["TypeScript", "Data Pipeline", "AppFolio", "Vantaca", "Buildium", "Schema Normalization"],
-    outcome: "Three legacy platforms, one clean data model.",
+    desc: "Multi-platform import system handling exports from AppFolio, Vantaca, and Buildium. Normalizes inconsistent legacy data into a unified modern schema. Admin tooling for error review, CSV export for corrections, and white-glove onboarding flow for new properties.",
+    stack: ["TypeScript", "Data Pipeline", "AppFolio", "Vantaca", "Buildium", "Admin Tooling"],
+    outcome: "Three legacy platforms, one clean data model. Error handling built for non-technical operators.",
+  },
+  {
+    title: "Curative Title Intelligence",
+    desc: "Real estate acquisition opportunity identification from tax delinquency data across NY counties. AI-powered obituary verification, heir mapping, and deal scoring. Automated pipeline from public records to prioritized acquisition targets.",
+    stack: ["AI/ML", "Data Pipeline", "Public Records", "Scoring Engine", "TypeScript", "Automation"],
+    outcome: "Automated deal sourcing from tax delinquency data — research that took days now takes minutes.",
+  },
+  {
+    title: "Federal BD Outreach Engine",
+    desc: "Automated daily outreach generation from USASpending contract data. TypeScript preprocessing pipeline feeds AI email generation with personalized hooks. Output queued to Google Docs for human review. Telegram bot for operator control.",
+    stack: ["TypeScript", "USASpending API", "AI Generation", "Google Docs API", "Telegram", "Cron"],
+    outcome: "60+ personalized outreach drafts per day, zero manual research.",
+  },
+  {
+    title: "Trading Operations Automation",
+    desc: "AI agent deployed on Mac Studio for a trading desk. Automated database checks, trade validation, Bloomberg data bridge. Daily reports generated before market open.",
+    stack: ["AI Agent", "Mac Studio", "PostgreSQL", "Bloomberg API", "Cron", "Telegram"],
+    outcome: "Pre-market operations report delivered by 6am, every day.",
   },
   {
     title: "Secure VPS Deployment",
-    desc: "Hardened OpenClaw instance on cloud VPS. SSH lockdown, fail2ban, UFW firewall, systemd service management. Full operator documentation for non-technical client.",
-    stack: ["OpenClaw", "Ubuntu VPS", "systemd", "SSH Hardening", "Tailscale", "Documentation"],
+    desc: "Hardened AI agent instance on cloud VPS. SSH lockdown, fail2ban, UFW firewall, systemd service management. Full operator documentation for non-technical client.",
+    stack: ["Ubuntu VPS", "systemd", "SSH Hardening", "Tailscale", "Documentation"],
     outcome: "Production-grade deployment with full handoff to non-technical operator.",
   },
 ];

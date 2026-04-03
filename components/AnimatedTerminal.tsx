@@ -8,16 +8,16 @@ interface CronJob {
 }
 
 const cronJobs: CronJob[] = [
-  { name: "pre-market-report", time: "5:30 AM" },
-  { name: "portfolio-rebalance-check", time: "6:00 AM" },
-  { name: "trade-validation", time: "6:15 AM" },
-  { name: "competitor-intel-scan", time: "7:00 AM" },
-  { name: "compliance-audit", time: "7:30 AM" },
-  { name: "client-outreach-gen", time: "8:00 AM" },
-  { name: "earnings-digest", time: "8:30 AM" },
-  { name: "risk-exposure-report", time: "9:00 AM" },
-  { name: "eod-trading-summary", time: "4:30 PM" },
-  { name: "weekly-performance", time: "5:00 PM" },
+  { name: "tax-audit-scan", time: "6:00 AM" },
+  { name: "advisor-content-gen", time: "6:30 AM" },
+  { name: "newsletter-pipeline", time: "7:00 AM" },
+  { name: "fleet-health-check", time: "7:15 AM" },
+  { name: "property-import", time: "7:30 AM" },
+  { name: "title-intel-scan", time: "8:00 AM" },
+  { name: "competitor-intel", time: "8:30 AM" },
+  { name: "outreach-gen", time: "9:00 AM" },
+  { name: "data-pipeline-sync", time: "9:30 AM" },
+  { name: "daily-report", time: "5:00 PM" },
 ];
 
 // Pre-generate random-ish stagger offsets per job (deterministic so no hydration mismatch)
@@ -53,7 +53,7 @@ export default function AnimatedTerminal() {
   );
   const [tick, setTick] = useState(0);
   const hasStarted = useRef(false);
-  const commandText = "openclaw run --all";
+  const commandText = "wintermute deploy --status";
 
   // Phase 1: Type out the command
   useEffect(() => {

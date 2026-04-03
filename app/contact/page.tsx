@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with WintermuteDev to start building your AI workforce.",
+    "Get in touch with WintermuteDev to start building your next system.",
 };
 
 export default function ContactPage() {
@@ -17,7 +17,7 @@ export default function ContactPage() {
             Get In <span className="text-gradient-neon">Touch</span>
           </h1>
           <p className="section-sub mx-auto text-center">
-            Ready to deploy your AI workforce? Fill out the form or email us
+            Ready to build your next system? Fill out the form or email us
             directly.
           </p>
         </div>
