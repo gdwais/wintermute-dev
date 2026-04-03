@@ -111,10 +111,10 @@ export default function ContactPage() {
               <p className="text-sm text-body-color">
                 Or email us directly at{" "}
                 <a
-                  href="mailto:me@daltonwais.com"
+                  href="mailto:info@wintermutedev.com"
                   className="text-cyan hover:text-magenta transition-colors"
                 >
-                  me@daltonwais.com
+                  info@wintermutedev.com
                 </a>
               </p>
             </div>
